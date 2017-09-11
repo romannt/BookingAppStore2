@@ -1,0 +1,20 @@
+﻿@model BookingAppStore.Models.Book
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Удаление книги</h2>
+<dl>
+    <dt>Название</dt>
+    <dd>@Html.DisplayFor(model => model.Name)</dd>
+    <dd>@Html.DisplayFor(model => model.Author)</dd>
+    <dd>@Html.DisplayFor(model => model.Price)</dd>
+</dl>
+
+@using (Html.BeginForm())
+{
+    // При нажатии на кнопку Удалить вызывается метод DeleteConfirmed, id в который передаётся из адресной строки
+    <input type="submit" value="Удалить" />
+}
+
