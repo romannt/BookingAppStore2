@@ -10,7 +10,10 @@
             <th><p>Название книги</p></th>
             <th><p>Автор</p></th>
             <th><p>Цена</p></th>
-            <th><a class="btn btn-default" href="/Home/Create" role="button">Создать</a></th>
+            <th>
+                <a class="btn btn-default" href="/Home/Create" role="button">Создать</a>
+                <a class="btn btn-default" href="/Home/CreateBook" role="button">CreateBook</a>
+            </th>
         </tr>
         @foreach (Book b in Model)
         {
@@ -22,6 +25,7 @@
                     <span><a class="btn btn-default" href="/Home/Buy/@b.Id" role="button">Купить</a></span>
                     <span><a class="btn btn-default" href="/Home/Edit/@b.Id" role="button">Изменить</a></span>
                     <span><a class="btn btn-default" href="/Home/Delete/@b.Id" role="button">Удалить</a></span>
+                    <span><a class="btn btn-default" href="/Home/EditBook/@b.Id" role="button">EditBook</a></span>
                 </td>
             </tr>
         }

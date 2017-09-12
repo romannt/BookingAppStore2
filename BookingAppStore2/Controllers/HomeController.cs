@@ -83,8 +83,24 @@ namespace BookingAppStore2.Controllers
             return RedirectToAction("Index");
         }
 
+        // Методы с представлениями, сгенерированными автоматически
+
         [HttpGet]
-        public ActionResult Edit(int? id)
+        public ActionResult CreateBook()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult CreateBook(Book book)
+        {
+            db.Books.Add(book); // INSERT
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public ActionResult EditBook(int? id)
         {
             if (id == null)
             {
@@ -99,7 +115,7 @@ namespace BookingAppStore2.Controllers
         }
 
         [HttpPost]
-        public ActionResult Edit(Book book)
+        public ActionResult EditBook(Book book)
         {
             db.Entry(book).State = EntityState.Modified; // UPDATE
             db.SaveChanges();
